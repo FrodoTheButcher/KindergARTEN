@@ -19,7 +19,8 @@ def UserCreate(sender,instance,created,**kwargs):
     if created:
         profile = Profile.objects.create(
             owner=user,
-            username=user.username
+            username=user.username,
+            email=user.email
         )
         send_mail(
         "Account created  "+ user.first_name,
